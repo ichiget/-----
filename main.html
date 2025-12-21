@@ -1,69 +1,88 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mysite</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mysite</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <div class="frame">
-
-  <!-- ロゴ -->
   <div class="logo">サイトロゴ</div>
 
-  <!-- 上メニュー（スマホ） -->
+  <!-- mobile top -->
   <nav class="top-menu">
     <a href="#">index</a>
     <a href="#">profile</a>
     <a href="#">gallery</a>
   </nav>
 
-  <!-- ステージ -->
-  <div class="stage">
-    <video id="bgVideo" autoplay loop muted playsinline></video>
-  </div>
-
-  <!-- 右メニュー（PC） -->
-  <nav class="side-menu">
-    <a href="#">index</a>
-    <a href="#">profile</a>
-    <a href="#">gallery</a>
-    <a href="#">blog</a>
-    <a href="#">game</a>
-  </nav>
-
-  <!-- スマホ下メニュー（スライド） -->
-  <div class="mobile-nav">
-    <button class="arrow" id="prev">◀︎</button>
-
-    <div class="nav-window">
-      <div class="nav-track" id="navTrack">
-        <a href="#">gallery</a>
-        <a href="#">blog</a>
-        <a href="#">game</a>
-        <a href="#">link4</a>
-        <a href="#">link5</a>
+  <div class="main">
+    <div class="stage-wrap">
+      <div class="stage">
+        <video id="bgVideo" autoplay loop muted playsinline></video>
       </div>
+      <button class="sound-toggle" id="soundBtn">🔇</button>
+
+      <!-- mobile bottom -->
+      <nav class="mobile-nav">
+        <button class="arrow" id="prev">◀︎</button>
+        <div class="nav-window">
+          <div class="nav-track" id="navTrack">
+            <!-- clone B (for seamless loop) -->
+            <div class="nav-page">
+              <a href="#">link2</a>
+              <a href="#">link3</a>
+              <a href="#">link4</a>
+            </div>
+            <!-- page A -->
+            <div class="nav-page">
+              <a href="#">blog</a>
+              <a href="#">game</a>
+              <a href="#">link1</a>
+            </div>
+            <!-- page B -->
+            <div class="nav-page">
+              <a href="#">link2</a>
+              <a href="#">link3</a>
+              <a href="#">link4</a>
+            </div>
+            <!-- clone A (for seamless loop) -->
+            <div class="nav-page">
+              <a href="#">blog</a>
+              <a href="#">game</a>
+              <a href="#">link1</a>
+            </div>
+          </div>
+        </div>
+        <button class="arrow" id="next">▶︎</button>
+      </nav>
     </div>
 
-    <button class="arrow" id="next">▶︎</button>
+    <!-- PC side -->
+    <nav class="side-menu">
+      <a href="#">index</a>
+      <a href="#">profile</a>
+      <a href="#">gallery</a>
+      <a href="#">blog</a>
+      <a href="#">game</a>
+      <a href="#">link1</a>
+      <a href="#">link2</a>
+      <a href="#">link3</a>
+      <a href="#">link4</a>
+    </nav>
   </div>
 
-  <!-- 音量ボタン -->
-  <button class="sound-toggle" id="soundBtn">🔇</button>
-
-  <!-- リンクボックス -->
   <section class="link-list">
-    <a href="#" class="link-box"></a>
-    <a href="#" class="link-box"></a>
-    <a href="#" class="link-box"></a>
-    <a href="#" class="link-box"></a>
+    <a href="#" class="link-box">list1</a>
+    <a href="#" class="link-box">list2</a>
+    <a href="#" class="link-box">list3</a>
+    <a href="#" class="link-box">list4</a>
   </section>
-
 </div>
 
-<script src="script.js"></script>
+
+<link rel="javascript" href="script.js">
 </body>
 </html>
+

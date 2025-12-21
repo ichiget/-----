@@ -1,159 +1,73 @@
-body {
-  margin: 0;
-  background: #000;
-  color: #fff;
-  font-family: sans-serif;
+body{margin:0;background:#000;color:#fff;font-family:sans-serif}
+a{text-decoration:none;color:inherit}
+
+.frame{
+
+    max-width: 500px;
+
+}
+.logo{
+    position:absolute;top:40px;left:60px
 }
 
-.frame {
-  position: relative;
-  min-height: 100vh;
+.main{
+    display:grid;
+    grid-template-columns:1fr 260px;
+    gap:24px;
+    padding:140px 60px 0;
+    margin: 50px;
 }
 
-/* ロゴ */
-.logo {
-  position: absolute;
-  top: 40px;
-  left: 60px;
+/* ===== stage ===== */
+.stage-wrap{display:flex;flex-direction:column;align-items:flex-start}
+/* ===== stage ===== */
+/* 4:3（横長）固定ステージ：どの画面サイズでも必ず横長 */
+.stage{
+  aspect-ratio:4 / 3;
+  width:min(80vw, 960px);
+  max-width:100%;
+  background:#666;
+  overflow:hidden;
 }
+.stage video{width:100%;height:100%;object-fit:cover}
 
-/* ステージ */
-.stage {
-  position: absolute;
-  top: 140px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 55%;
-  background: #fff;
-  overflow: hidden;
-}
+/* 音量：アニメーション画面の真下・左端 */
+.sound-toggle{margin-top:8px;background:none;border:1px solid #fff;color:#fff;padding:6px 10px}
 
-.stage video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+/* ===== PC side menu ===== */
+.side-menu{display:flex;flex-direction:column;gap:12px}
+.side-menu a{height:42px;border:1px solid #fff;display:flex;align-items:center;justify-content:center}
 
-/* 右メニュー（PC） */
-.side-menu {
-  position: absolute;
-  top: 180px;
-  right: 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+/* ===== link boxes ===== */
+.link-list{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:40px 60px}
+.link-box{height:60px;border:1px solid #fff;display:flex;align-items:center;justify-content:center}
 
-.side-menu a {
-  color: #fff;
-  text-decoration: none;
-}
+/* ===== mobile hidden ===== */
+.top-menu,.mobile-nav{display:none}
 
-/* 音量ボタン（PC） */
-.sound-toggle {
-  position: absolute;
-  bottom: 40px;
-  right: 60px;
-  background: none;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 6px 12px;
-}
+/* ===================== MOBILE ===================== */
+@media(max-width:499px){
+  .logo{position:static;padding:20px}
+  .main{display:block;padding:0}
+  .side-menu{display:none}
 
-/* スマホ用初期非表示 */
-.top-menu,
-.mobile-nav,
-.link-list {
-  display: none;
-}
+  .top-menu{display:flex;justify-content:space-around;background:#fff;color:#000;padding:12px 0}
+  .top-menu a{color:#000;font-weight:bold}
 
-/* ===== スマホ ===== */
-@media (max-width: 768px) {
+  .stage{height:45vh}
 
-  .logo {
-    position: static;
-    padding: 20px;
-  }
+  /* 音量：下バー左上に見える位置 */
+  .sound-toggle{position:absolute;left:8px;bottom:56px}
 
-  .side-menu {
-    display: none;
-  }
+  /* mobile nav */
+  .mobile-nav{display:flex;align-items:center;background:#fff;color:#000;width:100%}
+  .arrow{width:40px;background:none;border:none;font-size:18px}
+  .nav-window{overflow:hidden;flex:1}
+  .nav-track{display:flex;transition:transform .4s ease}
+  .nav-page{min-width:100%;display:flex;justify-content:space-around;flex-shrink:0}
+  .nav-page a{font-weight:bold;color:#000;padding:12px 0}
 
-  .stage {
-    position: static;
-    transform: none;
-    width: 100%;
-    height: 45vh;
-  }
-
-  .top-menu {
-    display: flex;
-    justify-content: space-around;
-    background: #fff;
-    color: #000;
-    padding: 12px 0;
-  }
-
-  .top-menu a {
-    color: #000;
-    font-weight: bold;
-    text-decoration: none;
-  }
-
-  /* スマホ下メニュー */
-  .mobile-nav {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    color: #000;
-    padding: 8px 0;
-  }
-
-  .arrow {
-    width: 40px;
-    background: none;
-    border: none;
-    font-size: 18px;
-  }
-
-  .nav-window {
-    overflow: hidden;
-    flex: 1;
-  }
-
-  .nav-track {
-    display: flex;
-    transition: transform 0.3s;
-  }
-
-  .nav-track a {
-    min-width: 100%;
-    text-align: center;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-  }
-
-  /* 音量ボタン（バーの下） */
-  .sound-toggle {
-    position: static;
-    margin: 10px auto;
-    display: block;
-  }
-
-  /* リンクボックス */
-  .link-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .link-box {
-    height: 50px;
-    border: 1px solid #fff;
-  }
+  .link-list{grid-template-columns:1fr 1fr;margin:20px}
 }
 
 
