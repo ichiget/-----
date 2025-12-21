@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mysite</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="frame">
+
+  <!-- ロゴ -->
+  <div class="logo">サイトロゴ</div>
+
+  <!-- 上メニュー（スマホ） -->
+  <nav class="top-menu">
+    <a href="#">index</a>
+    <a href="#">profile</a>
+    <a href="#">gallery</a>
+  </nav>
+
+  <!-- ステージ -->
+  <div class="stage">
+    <video id="bgVideo" autoplay loop muted playsinline></video>
+  </div>
+
+  <!-- 右メニュー（PC） -->
+  <nav class="side-menu">
+    <a href="#">index</a>
+    <a href="#">profile</a>
+    <a href="#">gallery</a>
+    <a href="#">blog</a>
+    <a href="#">game</a>
+  </nav>
+
+  <!-- スマホ下メニュー（スライド） -->
+  <div class="mobile-nav">
+    <button class="arrow" id="prev">◀︎</button>
+
+    <div class="nav-window">
+      <div class="nav-track" id="navTrack">
+        <a href="#">gallery</a>
+        <a href="#">blog</a>
+        <a href="#">game</a>
+        <a href="#">link4</a>
+        <a href="#">link5</a>
+      </div>
+    </div>
+
+    <button class="arrow" id="next">▶︎</button>
+  </div>
+
+  <!-- 音量ボタン -->
+  <button class="sound-toggle" id="soundBtn">🔇</button>
+
+  <!-- リンクボックス -->
+  <section class="link-list">
+    <a href="#" class="link-box"></a>
+    <a href="#" class="link-box"></a>
+    <a href="#" class="link-box"></a>
+    <a href="#" class="link-box"></a>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -3,42 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flash風レスポンシブUI</title>
-  <link rel="stylesheet" href="style.css">
+  <title>ENTER</title>
+<style>
+body {
+  margin: 0;
+  background: #000;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.enter-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enter-box {
+  text-align: center;
+}
+
+#enter {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 18px;
+  cursor: pointer;
+}</style>
 </head>
 <body>
 
-<div id="app">
-
-  <!-- メイン表示エリア -->
-  <main class="stage">
-    <section class="scene active" id="scene-index">
-      <h1>インデックス</h1>
-    </section>
-
-    <section class="scene" id="scene-gallery">
-      <h1>ギャラリー</h1>
-    </section>
-
-    <section class="scene" id="scene-about">
-      <h1>ABOUT</h1>
-    </section>
-  </main>
-
-  <!-- 右メニュー -->
-  <nav class="side-menu">
-    <button data-target="scene-index">INDEX</button>
-    <button data-target="scene-gallery">GALLERY</button>
-    <button data-target="scene-about">ABOUT</button>
-  </nav>
-
-  <!-- 下ナビ -->
-  <footer class="bottom-nav">
-    <span>© demo</span>
-  </footer>
-
+<div class="enter-screen">
+  <div class="enter-box">
+    <p class="notice">
+      ※ 音が出ます<br>
+      ※ PC推奨
+    </p>
+    <button id="enter">ENTER</button>
+  </div>
 </div>
 
-<script src="script.js"></script>
+<script>
+  document.getElementById("enter").onclick = () => {
+    window.location.href = "main.html";
+  };
+</script>
+
 </body>
 </html>
