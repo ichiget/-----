@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="frame">
@@ -14,18 +17,22 @@
 
   <nav class="top-menu">
     <a href="#">index</a>
-    <a href="#">about</a>
+    <a href="#" data-page="about">about</a>
     <a href="#">blog</a>
   </nav>
 
   <div class="main">
     <div class="stage-wrap">
-      <div class="stage">
-        <video id="bgVideo" autoplay loop muted playsinline>
-          <source src="" type="video/mp4">
-        </video>
-      </div>
-
+<div class="stage">
+  <!-- 背景ムービー -->
+  <video id="stageMovie" autoplay loop muted playsinline>
+    <source src="movie.mp4" type="video/mp4">
+  </video>
+  <!-- コンテンツ差し込み口 -->
+  <div class="stage-content" id="stageContent"></div>
+  <!-- ページ切り替えアニメーション -->
+  <div class="page-transition" id="pageTransition"></div>
+</div>
       
       <!-- mobile bottom -->
       <nav class="mobile-nav">
@@ -56,7 +63,7 @@
     <!-- PC side -->
     <nav class="side-menu">
       <a href="#">index</a>
-      <a href="#">about</a>
+     <a href="#" data-page="about">about</a>
       <a href="#">blog</a>
       <a href="#">game</a>
       <a href="#">gallary</a>
@@ -67,15 +74,18 @@
     </nav>
 
   </div>
+
+
   <!-- PC音量ボタン -->
         <section class="pc-sound-section"> 
-          <button class="sound-toggle" id="soundBtn">🔇</button>
+          <button class="sound-toggle" id="soundBtn">🔈</button>
+          <span class="kasu">←音量の怨霊</span>
         </section>
 
 
   <!-- モバイル音量ボタン -->
   <section class="mobile-sound-section">
-    <button class="sound-toggle" id="mobileSoundBtn">🔇</button>
+    <button class="sound-toggle" id="mobileSoundBtn">🔈</button>
   </section>
 
   <section class="link-list">
@@ -84,9 +94,10 @@
     <a href="#" class="link-box">リンク</a>
     <a href="#" class="link-box">リンク</a>
   </section>
-    <footer><p class="copyright">© ziyuwota project 2026</p></footer>
+    <footer><p class="copyright">© 2026 ziyuwota project</p></footer>
 </div>
 
-<link rel="javascript" href="script.js">
+<script src="script.js"></script>
+<script src="page.js"></script>
 </body>
 </html>

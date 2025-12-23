@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 固定サイズのベースコンテナ（ここでデザインする） */
+.page-container {
+  width: 500px;
+  height: 375px; /* 4:3の比率 */
+  background: #f0f0f0;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<div class="page-container" id="pageContainer">
+  <h1>About Page</h1>
+  <p>これはaboutページです。</p>
+  <p>このページはステージのサイズに合わせて拡大縮小されます。</p>
+  <p>レイアウトは崩れません。</p>
+</div>
+
+<script>
+function resizePage() {
+  const container = document.getElementById('pageContainer');
+  const baseWidth = 500;
+  const baseHeight = 375;
+  
+  const scaleX = window.innerWidth / baseWidth;
+  const scaleY = window.innerHeight / baseHeight;
+  const scale = Math.min(scaleX, scaleY);
+  
+  container.style.transform = `translate(-50%, -50%) scale(${scale})`;
+}
+
+window.addEventListener('resize', resizePage);
+window.addEventListener('load', resizePage);
+resizePage();
+</script>
+</body>
+</html>

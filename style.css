@@ -2,7 +2,6 @@
 
 
 body {
-
   background: #000;
   color: #fff;
   font-family: sans-serif;
@@ -11,6 +10,14 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        appearance: none;
 }
 
 .logo {
@@ -28,9 +35,8 @@ a {
 }
 .frame{
   max-width: 900px;
-    margin: 50px auto;
+  margin: 50px auto;
 }
-
 
 .stage-wrap {
   display: flex;
@@ -42,17 +48,67 @@ a {
   width: 100%;
   height: auto;
   object-fit: cover;
-  background: #dca7a7;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: aqua;
+  display: block;
   overflow: hidden;
-  margin:0 auto ;
-  border-width:1px;
-  border-style:solid;
+  margin: 0 auto;
+  border-width: 1px;
+  border-style: solid;
+  position: relative;
 }
 
+#stageMovie {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
+.stage-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+  overflow: auto;
+}
+
+.stage-content.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.stage-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* ページ切り替え */
+.page-transition {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.page-transition.active {
+  opacity: 1;
+}
 
 /* 音量ボタン */
 .sound-toggle {
@@ -65,6 +121,10 @@ a {
   margin: 10px 0;
 }
 
+span.kasu{
+font-family: sans-serif;
+}
+
 .sound-toggle:hover {
   background: #fff;
   color: #000;
@@ -75,6 +135,7 @@ a {
   width: 100%;
   display: flex;
   flex-direction: column;
+font-family: "Silkscreen", sans-serif;
 }
 
 .side-menu-header {
@@ -100,7 +161,7 @@ a {
   color: #000;
 }
 
-/* ===== リンクボックス ===== */
+/*  リンクボックス  */
 .link-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -117,18 +178,20 @@ a {
 
 .link-list a {
   margin: 0;
+  font-family: "";
 }
 
 .link-box:hover {
   background: #fff;
   color: #000;
-  transform: scale(1.0);
+  transform: scale(0.7);
 }
 
 footer {
 margin: 10px 0;
 font-size: 0.8em;
-text-align: center
+text-align: center;
+font-family: "Silkscreen", sans-serif;
 }
 
 /* スマホ版に戻れ。グッパイ */
@@ -143,6 +206,7 @@ text-align: center
   body {
     padding: 0;
     margin: 0;
+    width: 100%;
   }
 .frame{
   width: 100%;
@@ -177,6 +241,7 @@ text-align: center
     padding: 12px 0;
     border-top: 5px solid #000;
     border-bottom: 5px solid #000;
+    font-family: "Silkscreen", sans-serif;
   }
 
   .top-menu a {
@@ -245,6 +310,7 @@ text-align: center
     align-items: center;
     flex-shrink: 0;
     height: 100%;
+    font-family: "Silkscreen", sans-serif;
   }
 
   .nav-page a {
@@ -268,7 +334,6 @@ text-align: center
 
   .mobile-sound-section .sound-toggle {
     background: none;
-    border: 2px solid #fff;
     color: #fff;
     padding: 6px 12px;
     font-size: 18px;

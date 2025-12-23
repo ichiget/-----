@@ -1,20 +1,20 @@
 
-/* ===== 音量トグル ===== */
-const video = document.getElementById('bgVideo');
-const soundBtn = document.getElementById('soundBtn');
-const mobileSoundBtn = document.getElementById('mobileSoundBtn');
+// /* ===== 音量トグル ===== */
+// const video = document.getElementById('bgVideo');
+// const soundBtn = document.getElementById('soundBtn');
+// const mobileSoundBtn = document.getElementById('mobileSoundBtn');
 
-function toggleSound() {
-  video.muted = !video.muted;
-  const icon = video.muted ? '🔇' : '🔊';
-  soundBtn.textContent = icon;
-  mobileSoundBtn.textContent = icon;
-}
+// function toggleSound() {
+//   video.muted = !video.muted;
+//   const icon = video.muted ? '🔇' : '🔈';
+//   soundBtn.textContent = icon;
+//   mobileSoundBtn.textContent = icon;
+// };
 
-soundBtn.addEventListener('click', toggleSound);
-mobileSoundBtn.addEventListener('click', toggleSound);
+// soundBtn.addEventListener('click', toggleSound);
+// mobileSoundBtn.addEventListener('click', toggleSound);
 
-/* ===== モバイルナビゲーション - 円柱回転 ===== */
+/*  モバイルナビゲーション - 円柱回転  */
 const navTrack = document.getElementById('navTrack');
 const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
