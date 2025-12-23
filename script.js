@@ -21,12 +21,11 @@ const nextBtn = document.getElementById('nextBtn');
 const navWindow = document.querySelector('.nav-window');
 
 
-
 // オリジナルのページ内容を取得
 const pages = [
   { items: ['game', 'gallery', 'characters'] },
   { items: ['wiki', 'guestbook', 'contact'] },
-];
+]
 
 let currentIndex = 0;
 let isAnimating = false;
@@ -89,26 +88,26 @@ function slideToPrev() {
 nextBtn.addEventListener('click', slideToNext);
 prevBtn.addEventListener('click', slideToPrev);
 
-// スワイプ対応
-let touchStartX = 0;
-let touchEndX = 0;
+// // スワイプ対応
+// let touchStartX = 0;
+// let touchEndX = 0;
 
-navWindow.addEventListener('touchstart', (e) => {
-  touchStartX = e.changedTouches[0].screenX;
-});
+// navWindow.addEventListener('touchstart', (e) => {
+//   touchStartX = e.changedTouches[0].screenX;
+// });
 
-navWindow.addEventListener('touchend', (e) => {
-  touchEndX = e.changedTouches[0].screenX;
-  const diff = touchStartX - touchEndX;
+// navWindow.addEventListener('touchend', (e) => {
+//   touchEndX = e.changedTouches[0].screenX;
+//   const diff = touchStartX - touchEndX;
   
-  if (Math.abs(diff) > 50) {
-    if (diff > 0) {
-      slideToNext();
-    } else {
-      slideToPrev();
-    }
-  }
-});
+//   if (Math.abs(diff) > 50) {
+//     if (diff > 0) {
+//       slideToNext();
+//     } else {
+//       slideToPrev();
+//     }
+//   }
+// });
 
 // 初期化
 initPages();
